@@ -55,6 +55,68 @@ void add_contact(contact contacts[8], int *last)
 	*last += 1;
 }
 
+void print_process(std::string str)
+{
+	std::cout.width(10);
+	if (str.size() > 10)
+	{
+		str.resize(9);
+		std::cout << str + ".";
+	}
+	else
+		std::cout << str;
+}
+
+void search(contact contacts[8], int last)
+{
+	int i;
+	std::string entry;
+
+	print_process("index");
+	std::cout << "|";
+	print_process("first name");
+	std::cout << "|";
+	print_process("last name");
+	std::cout << "|";
+	print_process("nickname");
+	std::cout << std::endl;
+	i = 0;
+	while (i < last)
+	{
+		print_process(std::to_string(i));
+		std::cout << "|";
+		print_process(contacts[i].first_name);
+		std::cout << "|";
+		print_process(contacts[i].last_name);
+		std::cout << "|";
+		print_process(contacts[i].nickname);
+		std::cout << std::endl;
+		i++;
+	}
+	std::cout << "details for index: ";
+	std::getline(std::cin, entry);
+	i = 0;
+	while (i < last)
+	{
+		if (std::to_string(i) == entry)
+		{
+			std::cout << "first name: " << contacts[i].first_name << std::endl;
+			std::cout << "last name: " << contacts[i].last_name << std::endl;
+			std::cout << "nickname: " << contacts[i].nickname << std::endl;
+			std::cout << "login: " << contacts[i].login << std::endl;
+			std::cout << "postal address: " << contacts[i].postal_address << std::endl;
+			std::cout << "phone number: " << contacts[i].phone_number << std::endl;
+			std::cout << "birthday date: " << contacts[i].birthday_date << std::endl;
+			std::cout << "favorite meal: " << contacts[i].favorite_meal << std::endl;
+			std::cout << "underwear color: " << contacts[i].underwear_color << std::endl;
+			std::cout << "darkest color: " << contacts[i].darkest_secret << std::endl;
+			return;
+		}
+		i++;
+	}
+	std::cout << "can't find any results for: " + entry << std::endl;
+}
+
 int main(void)
 {
 	contact contacts[8];
@@ -65,7 +127,6 @@ int main(void)
 	{
 		std::string choice;
 
-		std::cout << last << std::endl;
 		std::cout << "ADD, SEARCH, EXIT ?" << std::endl;
 		std::getline(std::cin, choice);
 		if (choice == "ADD")
@@ -76,8 +137,7 @@ int main(void)
 				add_contact(contacts, &last);
 		}
 		if (choice == "SEARCH")
-		{
-		}
+			search(contacts, last);
 		if (choice == "EXIT" || std::cin.eof() == 1)
 			exit(0);
 	}
