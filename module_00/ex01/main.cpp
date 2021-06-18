@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 #include "class.hpp"
+#include <sstream>
 
 void add_contact(contact contacts[8], int *last)
 {
@@ -67,6 +69,14 @@ void print_process(std::string str)
 		std::cout << str;
 }
 
+std::string itoa(int i)
+{
+	std::stringstream cast;
+
+	cast << i;
+	return (cast.str());
+}
+
 void search(contact contacts[8], int last)
 {
 	int i;
@@ -83,7 +93,7 @@ void search(contact contacts[8], int last)
 	i = 0;
 	while (i < last)
 	{
-		print_process(std::to_string(i));
+		print_process(itoa(i));
 		std::cout << "|";
 		print_process(contacts[i].first_name);
 		std::cout << "|";
@@ -98,13 +108,14 @@ void search(contact contacts[8], int last)
 	i = 0;
 	while (i < last)
 	{
-		if (std::to_string(i) == entry)
+		if (itoa(i) == entry)
 		{
 			std::cout << "first name: " << contacts[i].first_name << std::endl;
 			std::cout << "last name: " << contacts[i].last_name << std::endl;
 			std::cout << "nickname: " << contacts[i].nickname << std::endl;
 			std::cout << "login: " << contacts[i].login << std::endl;
 			std::cout << "postal address: " << contacts[i].postal_address << std::endl;
+			std::cout << "email address: " << contacts[i].email_address << std::endl;
 			std::cout << "phone number: " << contacts[i].phone_number << std::endl;
 			std::cout << "birthday date: " << contacts[i].birthday_date << std::endl;
 			std::cout << "favorite meal: " << contacts[i].favorite_meal << std::endl;
