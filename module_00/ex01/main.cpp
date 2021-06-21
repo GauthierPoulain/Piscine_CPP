@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-#include "class.hpp"
+#include "contact.hpp"
 #include <sstream>
 
 void add_contact(contact contacts[8], int *last)
