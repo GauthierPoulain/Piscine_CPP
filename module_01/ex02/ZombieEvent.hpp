@@ -10,6 +10,7 @@ private:
 	std::string p_type;
 
 public:
+	ZombieEvent(void);
 	void setZombieType(std::string type);
 	Zombie *newZombie(std::string name);
 };

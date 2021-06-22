@@ -3,7 +3,6 @@
 
 #include <string>
 #include <iostream>
-#include "ZombieEvent.hpp"
 
 class Zombie
 {

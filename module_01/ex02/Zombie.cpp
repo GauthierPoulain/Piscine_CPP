@@ -12,5 +12,5 @@ void Zombie::setType(std::string type)
 
 void Zombie::advert(void)
 {
-	std::cout << "<" << p_name << " " << p_type << "> Braiiiiiiinnnssss ..." << std::endl;
+	std::cout << "<" << p_name << " (" << p_type << ")> Braiiiiiiinnnssss ..." << std::endl;
 }

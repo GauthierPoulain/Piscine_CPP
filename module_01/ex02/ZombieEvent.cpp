@@ -1,6 +1,11 @@
 #include "ZombieEvent.hpp"
 #include "Zombie.hpp"
 
+ZombieEvent::ZombieEvent(void)
+{
+	p_type = "poti zombie";
+}
+
 void ZombieEvent::setZombieType(std::string type)
 {
 	p_type = type;
