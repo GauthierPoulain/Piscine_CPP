@@ -1,24 +1,18 @@
-#include "ZombieEvent.hpp"
 #include "Zombie.hpp"
 
-ZombieEvent::ZombieEvent(void)
+void Zombie::setName(std::string name)
 {
-	p_type = "poti zombie";
+	p_name = name;
 }
 
-void ZombieEvent::setZombieType(std::string type)
+void Zombie::setType(std::string type)
 {
 	p_type = type;
 }
 
-Zombie *ZombieEvent::newZombie(std::string name)
+void Zombie::advert(void)
 {
-	Zombie *ret;
-
-	ret = new Zombie;
-	ret->setName(name);
-	ret->setType(p_type);
-	return (ret);
+	std::cout << "<" << p_name << " (" << p_type << ")> Braiiiiiiinnnssss ..." << std::endl;
 }
 
 static std::string gen_random(const int len)
@@ -34,7 +28,7 @@ static std::string gen_random(const int len)
 	return tmp_s;
 }
 
-Zombie *ZombieEvent::randomChump(void)
+Zombie *Zombie::randomChump(void)
 {
 	Zombie *ret;
 	std::string str;
