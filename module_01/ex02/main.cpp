@@ -7,13 +7,26 @@ int main(void)
 	Zombie *robert;
 	Zombie *jean;
 	Zombie *andy;
+	Zombie *random;
 
 	robert = event.newZombie("robert");
 	robert->advert();
+	delete robert;
 	jean = event.newZombie("jean");
 	jean->advert();
+	delete jean;
 	event.setZombieType("nullos");
 	andy = event.newZombie("andy");
 	andy->advert();
+	delete andy;
+	random = event.randomChump();
+	random->advert();
+	delete random;
+	random = event.randomChump();
+	random->advert();
+	delete random;
+	random = event.randomChump();
+	random->advert();
+	delete random;
 	return 0;
 }
