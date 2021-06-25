@@ -3,10 +3,10 @@ NAME = contacts
 CC = clang++
 MAKE = make --no-print-directory
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror
 
 HEADERS = \
-	# ./
+	./contact.hpp
 
 SRCS = \
 	./contact.cpp \
@@ -14,7 +14,7 @@ SRCS = \
 
 OBJS = $(SRCS:%.cpp=%.o)
 
-%.o: %.cpp Makefile
+%.o: %.cpp Makefile $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)

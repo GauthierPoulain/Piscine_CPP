@@ -1,5 +1,7 @@
 *.o
+*.DSYm
 a.out
+out.log
 megaphone
 contacts
-*.DSYm
+test

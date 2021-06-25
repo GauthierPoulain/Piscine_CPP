@@ -1,16 +1,20 @@
-NAME = megaphone
+NAME = test
 
 CC = clang++
 MAKE = make --no-print-directory
 
 CFLAGS = -Wall -Wextra -Werror
 
+HEADERS = \
+	./Account.hpp
+
 SRCS = \
-	./megaphone.cpp \
+	./Account.cpp \
+	./tests.cpp \
 
 OBJS = $(SRCS:%.cpp=%.o)
 
-%.o: %.cpp Makefile
+%.o: %.cpp Makefile $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
