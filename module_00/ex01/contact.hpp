@@ -1,17 +1,19 @@
 #include <string>
+#include <iostream>
+#include <stdlib.h>
+#include <sstream>
 
 class contact
 {
+private:
+	std::string p_firstName;
+	std::string p_lastName;
+	std::string p_nickname;
+	std::string p_phoneNumber;
+	std::string p_darkestSecret;
+
 public:
-	std::string first_name;
-	std::string last_name;
-	std::string nickname;
-	std::string login;
-	std::string postal_address;
-	std::string email_address;
-	std::string phone_number;
-	std::string birthday_date;
-	std::string favorite_meal;
-	std::string underwear_color;
-	std::string darkest_secret;
+	void print_details(void);
+	void add(void);
+	void print_row(int id);
 };

@@ -9,6 +9,7 @@ HEADERS = \
 	# ./
 
 SRCS = \
+	./contact.cpp \
 	./main.cpp \
 
 OBJS = $(SRCS:%.cpp=%.o)

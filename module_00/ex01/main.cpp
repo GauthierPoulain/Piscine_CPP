@@ -1,86 +1,12 @@
-#include <iostream>
-#include <string>
-#include <stdlib.h>
 #include "contact.hpp"
-#include <sstream>
 
-void add_contact(contact contacts[8], int *last)
+void print_process(std::string str);
+std::string itoa(int i);
+
+void search(contact contacts[], int size)
 {
-	contact new_contact;
-
-	std::cout << "first name : ";
-	std::getline(std::cin, new_contact.first_name);
-	if (std::cin.eof() == 1)
-		exit(0);
-	std::cout << "last name : ";
-	std::getline(std::cin, new_contact.last_name);
-	if (std::cin.eof() == 1)
-		exit(0);
-	std::cout << "nickname : ";
-	std::getline(std::cin, new_contact.nickname);
-	if (std::cin.eof() == 1)
-		exit(0);
-	std::cout << "login : ";
-	std::getline(std::cin, new_contact.login);
-	if (std::cin.eof() == 1)
-		exit(0);
-	std::cout << "postal address: ";
-	std::getline(std::cin, new_contact.postal_address);
-	if (std::cin.eof() == 1)
-		exit(0);
-	std::cout << "email address: ";
-	std::getline(std::cin, new_contact.email_address);
-	if (std::cin.eof() == 1)
-		exit(0);
-	std::cout << "phone number: ";
-	std::getline(std::cin, new_contact.phone_number);
-	if (std::cin.eof() == 1)
-		exit(0);
-	std::cout << "birthday date: ";
-	std::getline(std::cin, new_contact.birthday_date);
-	if (std::cin.eof() == 1)
-		exit(0);
-	std::cout << "favorite meal: ";
-	std::getline(std::cin, new_contact.favorite_meal);
-	if (std::cin.eof() == 1)
-		exit(0);
-	std::cout << "underwear color: ";
-	std::getline(std::cin, new_contact.underwear_color);
-	if (std::cin.eof() == 1)
-		exit(0);
-	std::cout << "darkest secret: ";
-	std::getline(std::cin, new_contact.darkest_secret);
-	if (std::cin.eof() == 1)
-		exit(0);
-
-	contacts[*last] = new_contact;
-	*last += 1;
-}
-
-void print_process(std::string str)
-{
-	std::cout.width(10);
-	if (str.size() > 10)
-	{
-		str.resize(9);
-		std::cout << str + ".";
-	}
-	else
-		std::cout << str;
-}
-
-std::string itoa(int i)
-{
-	std::stringstream cast;
-
-	cast << i;
-	return (cast.str());
-}
-
-void search(contact contacts[8], int last)
-{
+	std::string input;
 	int i;
-	std::string entry;
 
 	print_process("index");
 	std::cout << "|";
@@ -91,66 +17,38 @@ void search(contact contacts[8], int last)
 	print_process("nickname");
 	std::cout << std::endl;
 	i = 0;
-	while (i < last)
+	while (i < size)
 	{
-		print_process(itoa(i));
-		std::cout << "|";
-		print_process(contacts[i].first_name);
-		std::cout << "|";
-		print_process(contacts[i].last_name);
-		std::cout << "|";
-		print_process(contacts[i].nickname);
-		std::cout << std::endl;
+		contacts[i].print_row(i);
 		i++;
 	}
-	std::cout << "details for index: ";
-	std::getline(std::cin, entry);
-	i = 0;
-	while (i < last)
-	{
-		if (itoa(i) == entry)
-		{
-			std::cout << "first name: " << contacts[i].first_name << std::endl;
-			std::cout << "last name: " << contacts[i].last_name << std::endl;
-			std::cout << "nickname: " << contacts[i].nickname << std::endl;
-			std::cout << "login: " << contacts[i].login << std::endl;
-			std::cout << "postal address: " << contacts[i].postal_address << std::endl;
-			std::cout << "email address: " << contacts[i].email_address << std::endl;
-			std::cout << "phone number: " << contacts[i].phone_number << std::endl;
-			std::cout << "birthday date: " << contacts[i].birthday_date << std::endl;
-			std::cout << "favorite meal: " << contacts[i].favorite_meal << std::endl;
-			std::cout << "underwear color: " << contacts[i].underwear_color << std::endl;
-			std::cout << "darkest color: " << contacts[i].darkest_secret << std::endl;
-			return;
-		}
-		i++;
-	}
-	std::cout << "can't find any results for: " + entry << std::endl;
+	std::cout << "get details for index: ";
+	std::getline(std::cin, input);
+	if (std::cin.eof() == 1)
+		exit(0);
+	if (atoi(input.c_str()) < 0 || atoi(input.c_str()) >= size)
+		std::cout << "invalid selection" << std::endl;
+	else
+		contacts[atoi(input.c_str())].print_details();
 }
 
-int main(void)
+int main()
 {
+	std::string input;
 	contact contacts[8];
-	int last;
+	int size;
 
-	last = 0;
-	while (1)
+	size = 0;
+	while (true)
 	{
-		std::string choice;
-
 		std::cout << "ADD, SEARCH, EXIT ?" << std::endl;
-		std::getline(std::cin, choice);
-		if (choice == "ADD")
-		{
-			if (last == 8)
-				std::cout << "can't add more than 8 contacts" << std::endl;
-			else
-				add_contact(contacts, &last);
-		}
-		if (choice == "SEARCH")
-			search(contacts, last);
-		if (choice == "EXIT" || std::cin.eof() == 1)
+		std::getline(std::cin, input);
+		if (input == "EXIT" || std::cin.eof())
 			exit(0);
+		else if (input == "ADD")
+			contacts[size++].add();
+		else if (input == "SEARCH")
+			search(contacts, size);
 	}
-	return (0);
+	return 0;
 }
