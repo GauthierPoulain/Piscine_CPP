@@ -1,20 +1,16 @@
-NAME = tjoyd
+NAME = replace
 
 CC = clang++
 MAKE = make --no-print-directory
 
 CFLAGS = -Wall -Wextra -Werror
 
-HEADERS = \
-	./Account.hpp
-
 SRCS = \
-	./Account.cpp \
-	./tests.cpp \
+	./main.cpp \
 
 OBJS = $(SRCS:%.cpp=%.o)
 
-%.o: %.cpp Makefile $(HEADERS)
+%.o: %.cpp Makefile
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
