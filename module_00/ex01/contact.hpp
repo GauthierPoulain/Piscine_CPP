@@ -1,3 +1,6 @@
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
+
 #include <string>
 #include <iostream>
 #include <stdlib.h>
@@ -17,3 +20,5 @@ public:
 	void add(void);
 	void print_row(int id);
 };
+
+#endif
