@@ -1,17 +1,22 @@
+#include <iostream>
+#include <cmath>
+
 class Fixed
 {
 private:
-	float p_value;
+	int p_value;
 	static const int p_bits = 8;
 
 public:
 	Fixed();
 	Fixed(const Fixed &src);
 	Fixed(const float f);
+	Fixed(const int i);
 	~Fixed();
-	void setRawBits(int const raw);
-	int getRawBits(void) const;
+	int getRawBits(void);
 	Fixed &operator=(const Fixed &t);
-	float toFloat(void);
-	int toInt(void);
+	float toFloat(void) const;
+	int toInt(void) const;
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &);
