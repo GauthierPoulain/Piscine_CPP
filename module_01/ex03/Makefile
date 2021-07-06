@@ -3,7 +3,7 @@ NAME = violence
 CC = clang++
 MAKE = make --no-print-directory
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 HEADERS = \
 	./HumanA.hpp \

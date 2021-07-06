@@ -3,7 +3,7 @@ NAME = contacts
 CC = clang++
 MAKE = make --no-print-directory
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 HEADERS = \
 	./contact.hpp
