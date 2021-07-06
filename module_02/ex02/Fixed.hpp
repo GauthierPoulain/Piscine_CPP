@@ -14,9 +14,15 @@ public:
 	Fixed(const int i);
 	~Fixed();
 	int getRawBits(void);
-	Fixed &operator=(const Fixed &t);
+	Fixed &operator=(const Fixed &);
+	Fixed &operator*(const Fixed &);
+	Fixed &operator++(int);
+	Fixed operator++();
+	Fixed &operator--(int);
+	Fixed operator--();
 	float toFloat(void) const;
 	int toInt(void) const;
+	static Fixed max(Fixed, Fixed);
 };
 
 std::ostream &operator<<(std::ostream &out, const Fixed &);
