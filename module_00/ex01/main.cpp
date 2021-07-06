@@ -46,7 +46,12 @@ int main()
 		if (input == "EXIT" || std::cin.eof())
 			exit(0);
 		else if (input == "ADD")
-			contacts[size++].add();
+		{
+			if (size < 8)
+				contacts[size++].add();
+			else
+				std::cout << "limited to 8 contacts" << std::endl;
+		}
 		else if (input == "SEARCH")
 			search(contacts, size);
 	}
