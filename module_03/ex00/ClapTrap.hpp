@@ -1,3 +1,6 @@
+#ifndef CLAPTRAP_H
+#define CLAPTRAP_H
+
 #include <string>
 
 class ClapTrap
@@ -10,8 +13,11 @@ private:
 
 public:
 	ClapTrap(std::string name);
+	ClapTrap(const ClapTrap &);
 	~ClapTrap();
 	void attack(std::string const &target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 };
+
+#endif

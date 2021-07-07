@@ -1,3 +1,6 @@
+#ifndef FIXED_HPP
+#define FIXED_HPP
+
 #include <iostream>
 #include <cmath>
 
@@ -20,3 +23,5 @@ public:
 };
 
 std::ostream &operator<<(std::ostream &out, const Fixed &);
+
+#endif

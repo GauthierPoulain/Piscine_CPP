@@ -1,3 +1,6 @@
+#ifndef FIXED_HPP
+#define FIXED_HPP
+
 class Fixed
 {
 private:
@@ -12,3 +15,5 @@ public:
 	int getRawBits(void) const;
 	Fixed &operator=(const Fixed &t);
 };
+
+#endif
