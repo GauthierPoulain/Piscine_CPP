@@ -1,7 +1,7 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap(std::string name) : p_hitPoints(10), p_energyPoints(10), p_attackDamages(0)
+ClapTrap::ClapTrap(std::string name) : p_hitPoints(100), p_energyPoints(50), p_attackDamages(20)
 {
 	p_name = name;
 	std::cout << "ClapTrap " << p_name << " has spawn" << std::endl;
