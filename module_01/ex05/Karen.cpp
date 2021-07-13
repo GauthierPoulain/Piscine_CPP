@@ -27,7 +27,7 @@ void Karen::complain(std::string level)
 {
 	typedef void (Karen::*p_pfunc)(void);
 
-	std::string type[]{
+	std::string type[] = {
 		"DEBUG",
 		"INFO",
 		"WARNING",

@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 		filter = argv[1];
 
 	in_types = false;
-	std::string type[]{
+	std::string type[] = {
 		"DEBUG",
 		"INFO",
 		"WARNING",

@@ -2,13 +2,11 @@
 #include <iostream>
 #include <fstream>
 
-static std::string find_and_replace(std::string line, std::string find, std::string replace)
+static std::string find_and_replace(std::string line, std::string find, std::string replace, size_t i)
 {
-	size_t i;
 	size_t j;
 	std::string res;
 
-	i = 0;
 	res = line;
 	while (line[i])
 	{
@@ -20,7 +18,8 @@ static std::string find_and_replace(std::string line, std::string find, std::str
 				res = line.substr(0, i);
 				res += replace;
 				res += line.c_str() + (i + find.length());
-				return (find_and_replace(res, find, replace));
+				i += replace.length();
+				return (find_and_replace(res, find, replace, i));
 			}
 			j++;
 		}
@@ -62,7 +61,7 @@ int main(int argc, char const *argv[])
 	}
 	while (std::getline(fsfilein, line))
 	{
-		fsfileout << find_and_replace(line, base, replace);
+		fsfileout << find_and_replace(line, base, replace, 0);
 		if (!fsfilein.eof())
 			fsfileout << std::endl;
 	}

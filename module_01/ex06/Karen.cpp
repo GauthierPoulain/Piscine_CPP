@@ -36,7 +36,7 @@ void Karen::complain(std::string filter, std::string level)
 	typedef void (Karen::*p_pfunc)(void);
 	bool print = false;
 
-	std::string type[]{
+	std::string type[] = {
 		"DEBUG",
 		"INFO",
 		"WARNING",
