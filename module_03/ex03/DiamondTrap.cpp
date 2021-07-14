@@ -1,25 +1,22 @@
 #include "DiamondTrap.hpp"
 #include <iostream>
 
-DiamondTrap::DiamondTrap() : ClapTrap()
+DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name"), FragTrap("default"), ScavTrap("default")
 {
-	p_hitPoints = 100;
-	p_energyPoints = 100;
-	p_attackDamages = 30;
+	p_hitPoints = FragTrap::p_hitPoints;
+	p_energyPoints = ScavTrap::p_energyPoints;
+	p_attackDamages = FragTrap::p_attackDamages;
 	std::cout << "DiamondTrap " << p_name << " has spawn from default constructor" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(name + "_clap_name"), ScavTrap(name)
 {
+	p_hitPoints = FragTrap::p_hitPoints;
+	p_energyPoints = ScavTrap::p_energyPoints;
 	p_attackDamages = FragTrap::p_attackDamages;
-	std::cout << "DiamondTrap " << p_name << " has spawn" << std::endl;
-}
-
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name)
-{
-	p_hitPoints = 100;
-	p_energyPoints = 100;
-	p_attackDamages = 30;
+	std::cout << ClapTrap::p_name << std::endl;
+	std::cout << FragTrap::p_name << std::endl;
+	std::cout << ScavTrap::p_name << std::endl;
 	std::cout << "ScavTrap " << p_name << " has spawn from named constructor" << std::endl;
 }
 
