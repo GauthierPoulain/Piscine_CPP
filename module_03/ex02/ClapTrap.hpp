@@ -12,8 +12,10 @@ protected:
 	unsigned int p_attackDamages;
 
 public:
+	ClapTrap();
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap &);
+	ClapTrap &operator=(const ClapTrap &);
 	~ClapTrap();
 	void attack(std::string const &target);
 	void takeDamage(unsigned int amount);

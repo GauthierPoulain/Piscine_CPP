@@ -83,6 +83,10 @@
 			"**/CVS": true,
 			"**/.DS_Store": true,
 			"**/**.o": true
-		}
+		},
+		"awooga.originalColorCustomizations": {
+			"editor.background": "#400000"
+		},
+		"workbench.colorCustomizations": {}
 	}
 }

@@ -49,3 +49,8 @@ void ClapTrap::takeDamage(unsigned int amount)
 	p_hitPoints -= amount;
 	std::cout << "ClapTrap " << p_name << " has taken " << amount << " points of damage, has now " << p_hitPoints << " HP" << std::endl;
 }
+
+void ClapTrap::print_status()
+{
+	std::cout << "name = " << p_name << ", hit points = " << p_hitPoints << ", energy points = " << p_energyPoints << ", attack damages = " << p_attackDamages << std::endl;
+}

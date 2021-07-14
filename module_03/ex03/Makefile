@@ -6,11 +6,17 @@ MAKE = make --no-print-directory
 CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 
 HEADERS = \
-		./Fixed.hpp \
+		./ClapTrap.hpp \
+		./ScavTrap.hpp \
+		./FragTrap.hpp \
+		./DiamondTrap.hpp \
 
 SRCS = \
 		./main.cpp \
-		./Fixed.cpp \
+		./ClapTrap.cpp \
+		./ScavTrap.cpp \
+		./FragTrap.cpp \
+		./DiamondTrap.cpp \
 
 OBJS = $(SRCS:%.cpp=%.o)
 

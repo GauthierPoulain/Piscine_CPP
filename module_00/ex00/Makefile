@@ -3,7 +3,7 @@ NAME = megaphone
 CC = clang++
 MAKE = make --no-print-directory
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 
 SRCS = \
 	./megaphone.cpp \
