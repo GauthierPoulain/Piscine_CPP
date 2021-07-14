@@ -74,7 +74,8 @@
 			"random": "cpp",
 			"fstream": "cpp",
 			"iomanip": "cpp",
-			"map": "cpp"
+			"map": "cpp",
+			"stack": "cpp"
 		},
 		"files.exclude": {
 			"**/.git": true,
