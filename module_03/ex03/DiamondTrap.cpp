@@ -29,6 +29,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap &src)
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &src)
 {
 	p_name = src.p_name;
+	ClapTrap::p_name = src.p_name + "_clap_name";
 	std::cout << "DiamondTrap " << p_name << " has spawn from assignation" << std::endl;
 	return *this;
 }

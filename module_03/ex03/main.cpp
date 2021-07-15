@@ -36,6 +36,11 @@ int main(void)
 	{
 		DiamondTrap philibert("philibert");
 
+		DiamondTrap philou = philibert;
+
+		philou.whoAmI();
+		philou.print_status();
+
 		philibert.whoAmI();
 		philibert.print_status();
 	}
