@@ -1,7 +1,9 @@
 #ifndef DOG_HPP
 #define DOG_HPP
 
-class Dog
+#include "./Animal.hpp"
+
+class Dog : public Animal
 {
 private:
 public:
@@ -11,7 +13,7 @@ public:
 	~Dog();
 };
 
-Dog::Dog()
+Dog::Dog() : Animal("dog")
 {
 }
 
@@ -22,6 +24,7 @@ Dog::Dog(const Dog &src)
 
 Dog &Dog::operator=(const Dog &src)
 {
+	p_type = src.p_type;
 	return *this;
 }
 

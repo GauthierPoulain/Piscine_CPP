@@ -13,7 +13,7 @@ public:
 	~Cat();
 };
 
-Cat::Cat()
+Cat::Cat() : Animal("cat")
 {
 }
 
@@ -24,6 +24,7 @@ Cat::Cat(const Cat &src)
 
 Cat &Cat::operator=(const Cat &src)
 {
+	p_type = src.p_type;
 	return *this;
 }
 

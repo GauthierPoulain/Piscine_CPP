@@ -6,6 +6,9 @@ MAKE = make --no-print-directory
 CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 
 HEADERS = \
+		./Animal.hpp \
+		./Cat.hpp \
+		./Dog.hpp \
 
 SRCS = \
 		./main.cpp \
