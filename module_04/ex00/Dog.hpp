@@ -11,25 +11,7 @@ public:
 	Dog(const Dog &);
 	Dog &operator=(const Dog &);
 	~Dog();
+	void makeSound() const;
 };
-
-Dog::Dog() : Animal("dog")
-{
-}
-
-Dog::Dog(const Dog &src)
-{
-	*this = src;
-}
-
-Dog &Dog::operator=(const Dog &src)
-{
-	p_type = src.p_type;
-	return *this;
-}
-
-Dog::~Dog()
-{
-}
 
 #endif
