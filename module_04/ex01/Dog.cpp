@@ -1,6 +1,6 @@
 #include "./Dog.hpp"
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : Animal("Dog"), p_brain(new Brain())
 {
 	std::cout << "new default Dog" << std::endl;
 }
@@ -22,6 +22,7 @@ Dog &Dog::operator=(const Dog &src)
 
 Dog::~Dog()
 {
+	delete p_brain;
 	std::cout << "Dog destroyed" << std::endl;
 }
 

@@ -1,6 +1,6 @@
 #include "./Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : Animal("Cat"), p_brain(new Brain())
 {
 	std::cout << "new default Cat" << std::endl;
 }
@@ -22,6 +22,7 @@ Cat &Cat::operator=(const Cat &src)
 
 Cat::~Cat()
 {
+	delete p_brain;
 	std::cout << "Cat destroyed" << std::endl;
 }
 
