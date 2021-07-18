@@ -25,12 +25,12 @@ int main()
 	{
 		Cat *homie = new Cat();
 		homie->setIdea(3, "I'm a cat!");
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 100; i++)
 			std::cout << homie->getIdea(i) << std::endl;
 		delete homie;
 		Dog *doge = new Dog();
 		doge->setIdea(3, "I'm a dog!");
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 100; i++)
 			std::cout << doge->getIdea(i) << std::endl;
 		delete doge;
 
