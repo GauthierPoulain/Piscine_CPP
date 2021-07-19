@@ -35,12 +35,11 @@ void Character::equip(AMateria *m)
 			break;
 		}
 	}
-
-	(void)m;
 }
 
 void Character::unequip(int idx)
 {
+	delete _inventory[idx];
 	_inventory[idx] = 0;
 }
 

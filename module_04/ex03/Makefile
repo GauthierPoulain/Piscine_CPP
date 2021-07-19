@@ -4,7 +4,7 @@ CC = clang++
 MAKE = make --no-print-directory
 
 CFLAGS = -Wall -Wextra -Werror -g -std=c++98 
-CFLAGS += -fsanitize=address
+# CFLAGS += -fsanitize=address
 
 HEADERS = \
 		./AMateria.hpp \
