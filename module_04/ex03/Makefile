@@ -8,6 +8,7 @@ CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 HEADERS = \
 		./AMateria.hpp \
 		./Character.hpp \
+		./Cure.hpp \
 		./Ice.hpp \
 		./ICharacter.hpp \
 		./IMateriaSource.hpp \
@@ -16,6 +17,7 @@ HEADERS = \
 
 SRCS = \
 		./AMateria.cpp \
+		./Cure.cpp \
 		./Ice.cpp \
 		./main.cpp \
 

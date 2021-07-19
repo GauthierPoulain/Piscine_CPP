@@ -13,12 +13,21 @@ private:
 
 public:
 	Character();
+	Character(std::string const &name);
 	~Character();
 	std::string const &getName() const;
+	virtual void equip(AMateria *m);
+	virtual void unequip(int idx);
+	virtual void use(int idx, ICharacter &target);
 };
 
 Character::Character()
 {
+}
+
+Character::Character(std::string const &name)
+{
+	_name = name;
 }
 
 Character::~Character()
@@ -28,6 +37,22 @@ Character::~Character()
 std::string const &Character::getName() const
 {
 	return _name;
+}
+
+void Character::equip(AMateria *m)
+{
+	(void)m;
+}
+
+void Character::unequip(int idx)
+{
+	(void)idx;
+}
+
+void Character::use(int idx, ICharacter &target)
+{
+	(void)idx;
+	(void)target;
 }
 
 #endif

@@ -1,17 +1,17 @@
-#ifndef ICE_HPP
-#define ICE_HPP
+#ifndef CURE_HPP
+#define CURE_HPP
 
 #include <iostream>
 #include "./AMateria.hpp"
 #include "./ICharacter.hpp"
 
-class Ice : public AMateria
+class Cure : public AMateria
 {
 private:
 public:
-	Ice(void);
-	Ice(std::string const &type);
-	virtual ~Ice();
+	Cure(void);
+	Cure(std::string const &type);
+	virtual ~Cure();
 	virtual void use(ICharacter &target);
 	virtual AMateria *clone() const;
 };
