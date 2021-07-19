@@ -18,6 +18,7 @@ public:
 	std::string &getIdea(int index);
 	std::string *getIdeas();
 	void setIdea(int index, const std::string &idea);
+	
 };
 
 #endif

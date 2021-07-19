@@ -1,6 +1,24 @@
 #include "./Animal.hpp"
 
-Animal &Animal::operator=(const Animal &src) const
+Animal::Animal()
+{
+	std::cout << "new default Animal" << std::endl;
+}
+
+Animal::Animal(const std::string &type)
+{
+	std::cout << "new Animal: " << type << std::endl;
+	p_type = type;
+}
+
+Animal::Animal(const Animal &src)
+{
+	std::cout << "copy Animal: " << src.getType() << std::endl;
+	p_type = src.p_type;
+	*this = src;
+}
+
+Animal &Animal::operator=(const Animal &src)
 {
 	std::cout << "assign Animal: " << src.getType() << std::endl;
 	p_type = src.p_type;

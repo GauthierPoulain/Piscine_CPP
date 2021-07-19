@@ -5,6 +5,7 @@
 		}
 	],
 	"settings": {
+		"discord.enabled": false,
 		"files.associations": {
 			"ios": "cpp",
 			"iostream": "cpp",

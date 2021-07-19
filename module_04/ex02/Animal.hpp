@@ -10,10 +10,13 @@ protected:
 	std::string p_type;
 
 public:
-	virtual Animal &operator=(const Animal &) const = 0;
+	Animal();
+	Animal(const std::string &type);
+	Animal(const Animal &);
+	virtual Animal &operator=(const Animal &);
 	virtual ~Animal() = 0;
-	virtual std::string getType() const = 0;
-	virtual void makeSound() const = 0;
+	std::string getType() const;
+	virtual void makeSound() const;
 };
 
 #endif
