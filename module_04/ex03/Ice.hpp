@@ -2,27 +2,17 @@
 #define ICE_HPP
 
 #include <iostream>
+#include "./AMateria.hpp"
+#include "./ICharacter.hpp"
 
 class Ice : public AMateria
 {
 private:
 public:
+	Ice(void);
 	Ice(std::string const &type);
-	~Ice();
-	void use(ICharacter &target);
+	virtual ~Ice();
+	virtual void use(ICharacter &target);
 };
-
-Ice::Ice(std::string const &type) : AMateria(type)
-{
-}
-
-Ice::~Ice()
-{
-}
-
-void Ice::use(ICharacter &target)
-{
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
-}
 
 #endif

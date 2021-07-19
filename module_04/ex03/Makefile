@@ -15,6 +15,8 @@ HEADERS = \
 
 
 SRCS = \
+		./AMateria.cpp \
+		./Ice.cpp \
 		./main.cpp \
 
 OBJS = $(SRCS:%.cpp=%.o)
