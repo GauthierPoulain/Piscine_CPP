@@ -15,6 +15,9 @@ Character::Character(std::string const &name)
 
 Character::~Character()
 {
+	for (size_t i = 0; i < _maxInventory; i++)
+		if (_inventory[i])
+			delete _inventory[i];
 }
 
 std::string const &Character::getName() const

@@ -23,6 +23,7 @@ int main(void)
 		std::cout << "new character: " << bob->getName() << std::endl;
 
 		me->use(0, *bob);
+		me->unequip(0);
 		me->use(1, *bob);
 
 		delete bob;
