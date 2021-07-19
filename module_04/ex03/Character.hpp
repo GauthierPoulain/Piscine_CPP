@@ -9,7 +9,8 @@ class Character : public ICharacter
 {
 private:
 	std::string _name;
-	// AMateria *_inventory[4];
+	static const int _inventorySize = 4;
+	AMateria *_inventory[4];
 
 public:
 	Character();
@@ -41,18 +42,27 @@ std::string const &Character::getName() const
 
 void Character::equip(AMateria *m)
 {
+	for (size_t i = 0; i < _inventorySize; i++)
+	{
+		if (!_inventory[i])
+		{
+			_inventory[i] = m;
+			break;
+		}
+	}
+	
 	(void)m;
 }
 
 void Character::unequip(int idx)
 {
-	(void)idx;
+	_inventory[idx] = nullptr;
 }
 
 void Character::use(int idx, ICharacter &target)
 {
-	(void)idx;
-	(void)target;
+	if (_inventory[idx])
+		_inventory[idx]->use(target);
 }
 
 #endif
