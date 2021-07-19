@@ -1,9 +1,7 @@
-#include "./AMateria.hpp"
-#include "./ICharacter.hpp"
-#include "./IMateriaSource.hpp"
+#include "./Character.hpp"
+// #include "./MateriaSource.hpp"
 
 int main(void)
 {
-	IMateriaSource*src=new materia
 	return 0;
 }

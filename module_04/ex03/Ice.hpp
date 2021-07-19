@@ -1,18 +1,18 @@
 #ifndef ICE_HPP
 #define ICE_HPP
 
-#include "./AMateria.hpp"
+#include <iostream>
 
 class Ice : public AMateria
 {
 private:
-	
 public:
-	Ice();
+	Ice(std::string const &type);
 	~Ice();
+	void use(ICharacter &target);
 };
 
-Ice::Ice()
+Ice::Ice(std::string const &type) : AMateria(type)
 {
 }
 
@@ -22,8 +22,7 @@ Ice::~Ice()
 
 void Ice::use(ICharacter &target)
 {
-	target.
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
-
 
 #endif
