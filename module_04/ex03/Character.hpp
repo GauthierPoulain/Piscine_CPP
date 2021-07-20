@@ -16,11 +16,11 @@ public:
 	Character();
 	Character(std::string const &name);
 	~Character();
+	virtual Character &operator=(const Character &);
 	std::string const &getName() const;
 	virtual void equip(AMateria *m);
 	virtual void unequip(int idx);
 	virtual void use(int idx, ICharacter &target);
 };
-
 
 #endif

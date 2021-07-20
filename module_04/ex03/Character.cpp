@@ -20,6 +20,17 @@ Character::~Character()
 			delete _inventory[i];
 }
 
+#include <iostream>
+
+Character &Character::operator=(const Character &src)
+{
+	std::cout << "assign" << std::endl;
+	for (size_t i = 0; i < _maxInventory; i++)
+		_inventory[i] = 0;
+	_name = src.getName() + "_copy";
+	return *this;
+}
+
 std::string const &Character::getName() const
 {
 	return _name;

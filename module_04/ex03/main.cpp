@@ -5,6 +5,7 @@
 
 int main(void)
 {
+	if (false)
 	{
 		IMateriaSource *src = new MateriaSource();
 		src->learnMateria(new Ice());
@@ -31,16 +32,25 @@ int main(void)
 		delete me;
 		delete src;
 	}
-	if (false)
 	{
 		IMateriaSource *src = new MateriaSource();
 		src->learnMateria(new Ice());
 
-		ICharacter *me = new Character("me");
+		Character *me = new Character("me");
 		std::cout << "new character: " << me->getName() << std::endl;
+
+		Character *test = new Character();
+		test = me;
+
+		test->equip(src->createMateria("ice"));
+		std::cout << test->getName() << std::endl;
+		std::cout << me->getName() << std::endl;
+		me->use(0, *test);
+		test->use(0, *me);
 
 		delete me;
 		delete src;
+		delete test;
 	}
 	return 0;
 }
