@@ -36,7 +36,6 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 		if (type == _learnedMateria[i]->getType())
 		{
 			return _learnedMateria[i]->clone();
-			break;
 		}
 	}
 	return 0;

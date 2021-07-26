@@ -26,6 +26,20 @@ int main(void)
 		me->unequip(0);
 		me->use(1, *bob);
 		me->unequip(1);
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
 
 		delete bob;
 		delete me;
