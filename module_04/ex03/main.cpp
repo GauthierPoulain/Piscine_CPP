@@ -1,3 +1,5 @@
+//TODO: check assignation and copy
+
 #include "./Character.hpp"
 #include "./Ice.hpp"
 #include "./Cure.hpp"
@@ -40,6 +42,10 @@ int main(void)
 		me->equip(tmp);
 		tmp = src->createMateria("cure");
 		me->equip(tmp);
+
+		me->use(2, *bob);
+		me->unequip(2);
+		me->use(2, *bob);
 
 		delete bob;
 		delete me;

@@ -8,8 +8,8 @@ Dog::Dog() : Animal("Dog"), p_brain(new Brain())
 Dog::Dog(const Dog &src)
 {
 	std::cout << "copy Dog" << std::endl;
-	p_brain = src.p_brain;
-	*this = src;
+	p_type = src.p_type;
+	p_brain = new Brain(*src.p_brain);
 }
 
 Dog &Dog::operator=(const Dog &src)

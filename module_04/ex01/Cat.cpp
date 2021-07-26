@@ -8,8 +8,8 @@ Cat::Cat() : Animal("Cat"), p_brain(new Brain())
 Cat::Cat(const Cat &src)
 {
 	std::cout << "copy Cat" << std::endl;
-	p_brain = src.p_brain;
-	*this = src;
+	p_type = src.p_type;
+	p_brain = new Brain(*src.p_brain);
 }
 
 Cat &Cat::operator=(const Cat &src)
