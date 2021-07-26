@@ -5,7 +5,6 @@
 
 int main(void)
 {
-	if (false)
 	{
 		IMateriaSource *src = new MateriaSource();
 		src->learnMateria(new Ice());
@@ -32,6 +31,7 @@ int main(void)
 		delete me;
 		delete src;
 	}
+	if (false)
 	{
 		IMateriaSource *src = new MateriaSource();
 		src->learnMateria(new Ice());

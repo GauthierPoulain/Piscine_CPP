@@ -12,6 +12,7 @@ protected:
 
 public:
 	AMateria(std::string const &type);
+	AMateria &operator=(AMateria const &);
 	virtual ~AMateria();
 	std::string const &getType() const;
 	virtual AMateria *clone() const = 0;

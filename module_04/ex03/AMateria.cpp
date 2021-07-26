@@ -5,6 +5,11 @@ AMateria::AMateria(std::string const &type)
 	_type = type;
 }
 
+AMateria &AMateria::operator=(AMateria const &)
+{
+	return *this;
+}
+
 AMateria::~AMateria()
 {
 }

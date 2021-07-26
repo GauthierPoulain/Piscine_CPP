@@ -1,9 +1,11 @@
 #include "./Character.hpp"
+#include <iostream>
 
 Character::Character()
 {
 	for (size_t i = 0; i < _maxInventory; i++)
 		_inventory[i] = 0;
+	_gc = 0;
 }
 
 Character::Character(std::string const &name)
@@ -11,16 +13,24 @@ Character::Character(std::string const &name)
 	_name = name;
 	for (size_t i = 0; i < _maxInventory; i++)
 		_inventory[i] = 0;
+	_gc = 0;
 }
 
 Character::~Character()
 {
-	for (size_t i = 0; i < _maxInventory; i++)
-		if (_inventory[i])
-			delete _inventory[i];
+	// for (size_t i = 0; i < _maxInventory; i++)
+	// 	if (_inventory[i])
+	// 		delete _inventory[i];
+	t_list *tmp;
+	while (_gc)
+	{
+		tmp = _gc;
+		_gc = _gc->next;
+		delete tmp->materia;
+		// delete _gc;
+		_gc = tmp;
+	}
 }
-
-#include <iostream>
 
 Character &Character::operator=(const Character &src)
 {
@@ -45,6 +55,20 @@ void Character::equip(AMateria *m)
 			_inventory[i] = m;
 			break;
 		}
+	}
+	while (_gc)
+		_gc = _gc->next;
+	if (!_gc)
+	{
+		_gc = new t_list;
+		_gc->materia = m;
+		_gc->next = 0;
+	}
+	else
+	{
+		_gc->next = new t_list;
+		_gc->next->materia = m;
+		_gc->next->next = 0;
 	}
 }
 
