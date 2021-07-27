@@ -59,7 +59,6 @@ int main(void)
 		delete me;
 		delete src;
 	}
-	if (false)
 	{
 		IMateriaSource *src = new MateriaSource();
 		src->learnMateria(new Ice());
@@ -68,6 +67,7 @@ int main(void)
 		std::cout << "new character: " << me->getName() << std::endl;
 
 		Character *test = new Character();
+		delete test;
 		test = me;
 
 		test->equip(src->createMateria("ice"));
@@ -78,7 +78,6 @@ int main(void)
 
 		delete me;
 		delete src;
-		delete test;
 	}
 	return 0;
 }
