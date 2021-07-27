@@ -5,11 +5,18 @@
 #include "./AMateria.hpp"
 #include "./IMateriaSource.hpp"
 
+typedef struct s_list
+{
+	AMateria *materia;
+	struct s_list *next;
+} t_list;
+
 class MateriaSource : public IMateriaSource
 {
 private:
 	static const int _maxLearnedMateria = 4;
 	AMateria *_learnedMateria[4];
+	t_list *_gc;
 
 public:
 	MateriaSource();

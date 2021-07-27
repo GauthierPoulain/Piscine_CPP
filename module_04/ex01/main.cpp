@@ -18,6 +18,7 @@ int main()
 		for (size_t i = 0; i < nb; i++)
 			delete list[i];
 	}
+	if (false)
 	{
 		const Animal *j = new Dog();
 		const Animal *i = new Cat();

@@ -1,56 +1,10 @@
 #include "./Character.hpp"
 #include <iostream>
 
-t_list *ft_lstnew(AMateria *content)
-{
-	t_list *lst;
-
-	lst = new t_list;
-	lst->materia = content;
-	lst->next = 0;
-	return (lst);
-}
-
-void ft_lstadd_back(t_list **alst, t_list *new_el)
-{
-	t_list *last;
-
-	if (!*alst)
-		*alst = new_el;
-	else
-	{
-		last = *alst;
-		while (last->next)
-			last = last->next;
-		last->next = new_el;
-	}
-}
-
-void ft_lstclear(t_list **lst)
-{
-	t_list *tmp;
-
-	if (*lst)
-	{
-		while (*lst)
-		{
-			tmp = (*lst)->next;
-			if ((*lst)->materia)
-			{
-				delete (*lst)->materia;
-				(*lst)->materia = 0;
-			}
-			delete (*lst);
-			*lst = tmp;
-		}
-	}
-}
-
 Character::Character()
 {
 	for (size_t i = 0; i < _maxInventory; i++)
 		_inventory[i] = 0;
-	_gc = 0;
 }
 
 Character::Character(std::string const &name)
@@ -58,12 +12,10 @@ Character::Character(std::string const &name)
 	_name = name;
 	for (size_t i = 0; i < _maxInventory; i++)
 		_inventory[i] = 0;
-	_gc = 0;
 }
 
 Character::~Character()
 {
-	ft_lstclear(&_gc);
 }
 
 Character &Character::operator=(const Character &src)
@@ -90,7 +42,6 @@ void Character::equip(AMateria *m)
 			break;
 		}
 	}
-	ft_lstadd_back(&_gc, ft_lstnew(m));
 }
 
 void Character::unequip(int idx)
