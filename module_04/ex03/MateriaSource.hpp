@@ -4,12 +4,7 @@
 #include <string>
 #include "./AMateria.hpp"
 #include "./IMateriaSource.hpp"
-
-typedef struct s_list
-{
-	AMateria *materia;
-	struct s_list *next;
-} t_list;
+#include "./salut.hpp"
 
 class MateriaSource : public IMateriaSource
 {

@@ -2,51 +2,6 @@
 #include "./Ice.hpp"
 #include "./Cure.hpp"
 
-t_list *ft_lstnew(AMateria *content)
-{
-	t_list *lst;
-
-	lst = new t_list;
-	lst->materia = content;
-	lst->next = 0;
-	return (lst);
-}
-
-void ft_lstadd_back(t_list **alst, t_list *new_el)
-{
-	t_list *last;
-
-	if (!*alst)
-		*alst = new_el;
-	else
-	{
-		last = *alst;
-		while (last->next)
-			last = last->next;
-		last->next = new_el;
-	}
-}
-
-void ft_lstclear(t_list **lst)
-{
-	t_list *tmp;
-
-	if (*lst)
-	{
-		while (*lst)
-		{
-			tmp = (*lst)->next;
-			if ((*lst)->materia)
-			{
-				delete (*lst)->materia;
-				(*lst)->materia = 0;
-			}
-			delete (*lst);
-			*lst = tmp;
-		}
-	}
-}
-
 MateriaSource::MateriaSource()
 {
 	for (size_t i = 0; i < _maxLearnedMateria; i++)
@@ -56,24 +11,27 @@ MateriaSource::MateriaSource()
 
 MateriaSource::~MateriaSource()
 {
+	// for (size_t i = 0; i < _maxLearnedMateria; i++)
+	// {
+	// 	if (_learnedMateria[i])
+	// 		delete _learnedMateria[i];
+	// }
 	ft_lstclear(&_gc);
-	for (size_t i = 0; i < _maxLearnedMateria; i++)
-	{
-		if (_learnedMateria[i])
-			delete _learnedMateria[i];
-	}
 }
 
 void MateriaSource::learnMateria(AMateria *src)
 {
+	AMateria *tmp = src->clone();
+	ft_lstadd_back(&_gc, ft_lstnew(tmp));
 	for (size_t i = 0; i < _maxLearnedMateria; i++)
 	{
 		if (!_learnedMateria[i])
 		{
-			_learnedMateria[i] = src;
+			_learnedMateria[i] = tmp;
 			break;
 		}
 	}
+	delete src;
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type)
@@ -81,11 +39,7 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 	for (size_t i = 0; i < _maxLearnedMateria; i++)
 	{
 		if (type == _learnedMateria[i]->getType())
-		{
-			AMateria *salut = _learnedMateria[i]->clone();
-			ft_lstadd_back(&_gc, ft_lstnew(salut));
-			return salut;
-		}
+			return _learnedMateria[i]->clone();
 	}
 	return 0;
 }

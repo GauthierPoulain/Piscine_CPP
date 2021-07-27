@@ -3,7 +3,7 @@ NAME = a.out
 CC = clang++
 MAKE = make --no-print-directory
 
-CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 
+CFLAGS = -Wall -Wextra -Werror -g -std=c++98 
 # CFLAGS += -fsanitize=address
 
 HEADERS = \

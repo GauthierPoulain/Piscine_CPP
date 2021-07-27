@@ -33,13 +33,6 @@ int main(void)
 		tmp = src->createMateria("cure");
 		me->equip(tmp);
 		tmp = src->createMateria("cure");
-		tmp = src->createMateria("cure");
-		tmp = src->createMateria("cure");
-		tmp = src->createMateria("cure");
-		tmp = src->createMateria("cure");
-		tmp = src->createMateria("cure");
-		tmp = src->createMateria("cure");
-		tmp = src->createMateria("cure");
 		me->equip(tmp);
 		me->equip(tmp);
 		tmp = src->createMateria("cure");

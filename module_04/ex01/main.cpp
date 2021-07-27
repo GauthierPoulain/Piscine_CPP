@@ -1,5 +1,3 @@
-//FIXME: fix leaks
-
 #include <iostream>
 #include "./Animal.hpp"
 #include "./Dog.hpp"

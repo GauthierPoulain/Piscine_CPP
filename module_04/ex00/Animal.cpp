@@ -3,6 +3,7 @@
 Animal::Animal()
 {
 	std::cout << "new default Animal" << std::endl;
+	p_type = "default";
 }
 
 Animal::Animal(const std::string &type)
@@ -14,14 +15,12 @@ Animal::Animal(const std::string &type)
 Animal::Animal(const Animal &src)
 {
 	std::cout << "copy Animal: " << src.getType() << std::endl;
-	p_type = src.p_type;
 	*this = src;
 }
 
 Animal &Animal::operator=(const Animal &src)
 {
 	std::cout << "assign Animal: " << src.getType() << std::endl;
-	p_type = src.p_type;
 	return *this;
 }
 
