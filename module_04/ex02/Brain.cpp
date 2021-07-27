@@ -8,7 +8,6 @@ Brain::Brain(const Brain &src)
 {
 	for (size_t i = 0; i < 100; i++)
 		this->p_ideas[i] = src.p_ideas[i];
-	*this = src;
 }
 
 Brain &Brain::operator=(const Brain &src)

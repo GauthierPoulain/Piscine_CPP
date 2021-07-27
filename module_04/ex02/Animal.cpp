@@ -14,7 +14,6 @@ Animal::Animal(const std::string &type)
 Animal::Animal(const Animal &src)
 {
 	std::cout << "copy Animal: " << src.getType() << std::endl;
-	p_type = src.p_type;
 	*this = src;
 }
 

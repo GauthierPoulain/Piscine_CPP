@@ -14,7 +14,6 @@ WrongAnimal::WrongAnimal(const std::string &type)
 WrongAnimal::WrongAnimal(const WrongAnimal &src)
 {
 	std::cout << "copy WrongAnimal" << std::endl;
-	p_type = src.p_type;
 	*this = src;
 }
 

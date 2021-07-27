@@ -16,7 +16,7 @@ Cat &Cat::operator=(const Cat &src)
 {
 	std::cout << "assign Cat" << std::endl;
 	p_type = src.p_type;
-	p_brain = src.p_brain;
+	p_brain = new Brain(*src.p_brain);
 	return *this;
 }
 

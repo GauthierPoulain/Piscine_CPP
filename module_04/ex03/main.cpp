@@ -45,6 +45,7 @@ int main(void)
 		me->equip(tmp);
 		tmp = src->createMateria("cure");
 		me->equip(tmp);
+		me->equip(tmp);
 		tmp = src->createMateria("cure");
 		me->equip(tmp);
 		tmp = src->createMateria("cure");

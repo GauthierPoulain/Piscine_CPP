@@ -16,7 +16,7 @@ Dog &Dog::operator=(const Dog &src)
 {
 	std::cout << "assign Dog" << std::endl;
 	p_type = src.p_type;
-	p_brain = src.p_brain;
+	p_brain = new Brain(*src.p_brain);
 	return *this;
 }
 
