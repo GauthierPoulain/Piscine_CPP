@@ -12,7 +12,7 @@ int main(void)
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
 
-		ICharacter *me = new Character("me");
+		Character *me = new Character("me");
 		std::cout << "new character: " << me->getName() << std::endl;
 
 		AMateria *tmp;
@@ -21,7 +21,9 @@ int main(void)
 		tmp = src->createMateria("cure");
 		me->equip(tmp);
 
-		ICharacter *bob = new Character("bob");
+		Character *bob = new Character("bob");
+		Character *boby = new Character(*bob);
+
 		std::cout << "new character: " << bob->getName() << std::endl;
 
 		me->use(0, *bob);
@@ -29,6 +31,10 @@ int main(void)
 		me->use(1, *bob);
 		me->unequip(1);
 		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		me->equip(tmp);
+		me->equip(tmp);
+		me->equip(tmp);
 		me->equip(tmp);
 		tmp = src->createMateria("cure");
 		me->equip(tmp);
@@ -49,6 +55,7 @@ int main(void)
 		me->use(2, *bob);
 
 		delete bob;
+		delete boby;
 		delete me;
 		delete src;
 	}

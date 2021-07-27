@@ -60,12 +60,27 @@ Character::Character()
 	_gc = 0;
 }
 
+Character::Character(const Character &src)
+{
+	_gc = 0;
+	for (size_t i = 0; i < _maxInventory; i++)
+	{
+		if (src._inventory[i])
+		{
+			_inventory[i] = src._inventory[i]->clone();
+			ft_lstadd_back(&_gc, ft_lstnew(_inventory[i]));
+		}
+		else
+			_inventory[i] = 0;
+	}
+}
+
 Character::Character(std::string const &name)
 {
 	_name = name;
+	_gc = 0;
 	for (size_t i = 0; i < _maxInventory; i++)
 		_inventory[i] = 0;
-	_gc = 0;
 }
 
 Character::~Character()
@@ -76,10 +91,18 @@ Character::~Character()
 Character &Character::operator=(const Character &src)
 {
 	std::cout << "assign" << std::endl;
-	for (size_t i = 0; i < _maxInventory; i++)
-		_inventory[i] = 0;
-	_name = src.getName() + "_copy";
 	_gc = 0;
+	for (size_t i = 0; i < _maxInventory; i++)
+	{
+		if (src._inventory[i])
+		{
+			_inventory[i] = src._inventory[i]->clone();
+			ft_lstadd_back(&_gc, ft_lstnew(_inventory[i]));
+		}
+		else
+			_inventory[i] = 0;
+	}
+	_name = src.getName() + "_copy";
 	return *this;
 }
 
