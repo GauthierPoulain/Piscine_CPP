@@ -53,6 +53,22 @@ void Bureaucrat::decrementGrade()
 		_grade--;
 }
 
+void Bureaucrat::executeForm(Form const &form)
+{
+	if (form.isSigned())
+	{
+		if (form.getGradeExec() > _grade)
+			std::cout << _name << " cannot execute " << form.getName() << " because he's grade too low" << std::endl;
+		else
+		{
+			std::cout << _name << " executes " << form.getName() << std::endl;
+			form.execute(*this);
+		}
+	}
+	else
+		std::cout << _name << " cannot execute " << form.getName() << " because it's not signed" << std::endl;
+}
+
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &src)
 {
 	out << src.getName() << ", bureaucrat grade " << src.getGrade();

@@ -5,6 +5,9 @@
 #include <exception>
 #include <ostream>
 
+#include "./Form.hpp"
+class Form;
+
 class Bureaucrat
 {
 private:
@@ -21,6 +24,7 @@ public:
 	int getGrade() const;
 	void incrementGrade();
 	void decrementGrade();
+	void executeForm(Form const &form);
 	class GradeTooHighException : public std::exception
 	{
 		const char *what() const throw()
@@ -37,6 +41,7 @@ public:
 	};
 };
 
-std::ostream &operator<<(std::ostream &out, const Bureaucrat &);
+std::ostream &
+operator<<(std::ostream &out, const Bureaucrat &);
 
 #endif
