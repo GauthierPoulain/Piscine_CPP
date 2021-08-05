@@ -46,7 +46,7 @@ int Form::getGradeExec() const
 	return _gradeExec;
 }
 
-void Form::beSigned(const Bureaucrat &bureaucrat)
+void Form::signForm(const Bureaucrat &bureaucrat)
 {
 	if (_signed)
 		std::cout << bureaucrat.getName() << " cannot sign " << _name << "because it's already signed" << std::endl;
@@ -62,7 +62,7 @@ void Form::beSigned(const Bureaucrat &bureaucrat)
 	}
 }
 
-void Form::signForm(const Bureaucrat &bureaucrat)
+void Form::beSigned(const Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() > _gradeSign)
 		throw GradeTooLowException();
