@@ -76,7 +76,8 @@
 			"fstream": "cpp",
 			"iomanip": "cpp",
 			"map": "cpp",
-			"stack": "cpp"
+			"stack": "cpp",
+			"main.C": "cpp"
 		},
 		"files.exclude": {
 			"**/.git": true,
