@@ -6,6 +6,9 @@
 	],
 	"settings": {
 		"discord.enabled": true,
+		"github.copilot.enable": {
+			"*": false
+		},
 		"files.associations": {
 			"ios": "cpp",
 			"iostream": "cpp",
