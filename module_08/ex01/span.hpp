@@ -3,22 +3,31 @@
 
 #include <exception>
 #include <vector>
+#include <algorithm>
 
 class Span
 {
 private:
 	std::vector<int> _vector;
-	int _size;
-	int _filled;
+	unsigned int _size;
+	unsigned int _filled;
 
 public:
-	Span();
+	Span(void);
+	Span(unsigned int);
 	Span(const Span &);
 	Span &operator=(const Span &);
-	~Span();
+	~Span(void);
 	void addNumber(int);
-	int shortestSpan();
-	int longestSpan();
+	int shortestSpan(void);
+	int longestSpan(void);
+	class NoFilledException : public std::exception
+	{
+		const char *what() const throw()
+		{
+			return "Vector is empty";
+		}
+	};
 	class FullFilledException : public std::exception
 	{
 		const char *what() const throw()
