@@ -1,4 +1,4 @@
-// clang++ main.cpp mutantstack.cpp -Wall -Wextra -Werror -g -std=c++98 -fsanitize=address && ./a.out
+// clang++ -Wall -Wextra -Werror -g -std=c++98 -fsanitize=address main.cpp mutantstack.cpp && ./a.out
 
 #include <iostream>
 #include <stack>
