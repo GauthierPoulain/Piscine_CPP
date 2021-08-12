@@ -2,27 +2,20 @@
 #define MUTANTSTACK_HPP
 
 #include <stack>
+#include <iterator>
+#include <list>
 
 template <typename T>
-class MutantStack
+class MutantStack : public std::stack<T>
 {
-private:
 public:
 	MutantStack();
 	MutantStack(const MutantStack &);
-	MutantStack(const std::stack<T> &);
 	MutantStack &operator=(const MutantStack &);
 	~MutantStack();
+	typedef typename std::stack<T>::container_type::iterator iterator;
+	iterator begin();
+	iterator end();
 };
-
-template <typename T>
-MutantStack<T>::MutantStack()
-{
-}
-
-template <typename T>
-MutantStack<T>::~MutantStack()
-{
-}
 
 #endif

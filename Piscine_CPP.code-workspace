@@ -80,7 +80,8 @@
 			"iomanip": "cpp",
 			"map": "cpp",
 			"stack": "cpp",
-			"main.C": "cpp"
+			"main.C": "cpp",
+			"list": "cpp"
 		},
 		"files.exclude": {
 			"**/.git": true,
