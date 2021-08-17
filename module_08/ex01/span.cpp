@@ -52,7 +52,7 @@ int Span::shortestSpan(void)
 
 int Span::longestSpan(void)
 {
-	if (!_filled)
+	if (_filled <= 1)
 		throw Span::NoFilledException();
 	else
 	{
