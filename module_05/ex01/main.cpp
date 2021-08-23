@@ -62,7 +62,7 @@ int main(void)
 
 			std::cout << form << std::endl;
 			std::cout << bureaucrat << std::endl;
-			form.signForm(bureaucrat);
+			bureaucrat.signForm(form);
 		}
 		catch (const std::exception &e)
 		{
