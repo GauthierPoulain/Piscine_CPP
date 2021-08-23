@@ -46,22 +46,6 @@ int Form::getGradeExec() const
 	return _gradeExec;
 }
 
-void Form::signForm(const Bureaucrat &bureaucrat)
-{
-	if (_signed)
-		std::cout << bureaucrat.getName() << " cannot sign " << _name << "because it's already signed" << std::endl;
-	else
-	{
-		if (bureaucrat.getGrade() > _gradeSign)
-			std::cout << bureaucrat.getName() << " cannot sign " << _name << "because he's grade too low" << std::endl;
-		else
-		{
-			std::cout << bureaucrat.getName() << " signs " << _name << std::endl;
-			_signed = true;
-		}
-	}
-}
-
 void Form::beSigned(const Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() > _gradeSign)
