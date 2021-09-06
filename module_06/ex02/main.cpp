@@ -9,7 +9,7 @@
 
 Base *generate(void)
 {
-	srand(time(NULL));
+	srand(static_cast<unsigned int>(time(NULL)));
 	switch (rand() % 3)
 	{
 	case 0:

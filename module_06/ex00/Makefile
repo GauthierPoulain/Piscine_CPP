@@ -3,7 +3,7 @@ NAME = convert
 CC = clang++
 MAKE = make --no-print-directory
 
-CFLAGS = -Wall -Wextra -Werror -g -std=c++98
+CFLAGS = -Wall -Wextra -Werror -g -std=c++98 -Wconversion
 # CFLAGS += -fsanitize=address
 
 HEADERS = \
