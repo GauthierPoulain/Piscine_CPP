@@ -1,5 +1,5 @@
 *.o
-*.DSYm
+*.dSYM
 a.out
 out.log
 megaphone
