@@ -2,11 +2,12 @@
 #include <iomanip>
 #include <cmath>
 #include <cstring>
+#include <limits.h>
 
 void manageChar(double value)
 {
 	std::cout << "char: ";
-	if (std::isnan(value) || value < -128 || value > 127)
+	if (std::isnan(value) || value < CHAR_MIN || value > CHAR_MAX)
 		std::cout << "impossible";
 	else if (!isprint(static_cast<int>(value)))
 		std::cout << "Non displayable";
@@ -18,7 +19,7 @@ void manageChar(double value)
 void manageInt(double value)
 {
 	std::cout << "int: ";
-	if (std::isnan(value) || value < -2147483648 || value > 2147483647)
+	if (std::isnan(value) || value < INT_MIN || value > INT_MAX)
 		std::cout << "impossible";
 	else
 		std::cout << static_cast<int>(value);
@@ -41,7 +42,7 @@ void manageDouble(double value)
 	if (std::ceil(value) == value)
 		std::cout << std::setprecision(1) << std::fixed << value << std::endl;
 	else
-		std::cout << value << std::endl;
+	std::cout << value << std::endl;
 	std::cout << std::endl;
 }
 
