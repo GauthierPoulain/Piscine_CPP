@@ -1,5 +1,3 @@
-//TODO: check assignation and copy
-
 #include "./Character.hpp"
 #include "./Ice.hpp"
 #include "./Cure.hpp"

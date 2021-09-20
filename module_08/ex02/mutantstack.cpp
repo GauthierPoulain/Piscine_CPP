@@ -41,4 +41,6 @@ typename MutantStack<T>::iterator MutantStack<T>::end()
 }
 
 
-https://stackoverflow.com/questions/115703/storing-c-template-function-definitions-in-a-cpp-file
+// FIX https://stackoverflow.com/questions/115703/storing-c-template-function-definitions-in-a-cpp-file
+// TODO ajouter des tests au main
+// TODO ajouter un addNumber avec une rate d'iterateurs (fin du dernier paragraphe ex01)
