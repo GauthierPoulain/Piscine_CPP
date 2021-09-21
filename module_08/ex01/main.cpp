@@ -1,4 +1,4 @@
-// clang++ main.cpp span.cpp -Wall -Wextra -Werror -g -std=c++98 -fsanitize=address && ./a.out
+// clang++ -Wall -Wextra -Werror -g -std=c++98 -fsanitize=address main.cpp span.cpp && ./a.out
 
 #include <iostream>
 #include <stdlib.h>
@@ -61,5 +61,22 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
+	try
+	{
+		Span sp(20);
+
+		sp.addNumber(1);
+		sp.addNumber(2);
+		sp.addNumber(3);
+		sp.addNumber(4);
+		sp.addRange(sp.begin(), sp.end());
+
+		sp.print();
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
 	return 0;
 }

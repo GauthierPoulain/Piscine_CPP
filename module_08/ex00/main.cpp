@@ -1,4 +1,4 @@
-// clang++ main.cpp -Wall -Wextra -Werror -g -std=c++98 -fsanitize=address && ./a.out
+// clang++ -Wall -Wextra -Werror -g -std=c++98 -fsanitize=address main.cpp && ./a.out
 
 #include <vector>
 #include <iostream>

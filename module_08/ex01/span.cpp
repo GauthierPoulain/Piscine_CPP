@@ -25,13 +25,19 @@ Span &Span::operator=(const Span &src)
 	_vector = src._vector;
 	return *this;
 }
-#include <iostream>
+
 void Span::addNumber(int nb)
 {
 	if (_filled >= _size)
 		throw Span::FullFilledException();
 	else
 		_vector[_filled++] = nb;
+}
+
+void Span::addRange(std::vector<int>::iterator start, std::vector<int>::iterator end)
+{
+	while (start != end)
+		_vector[_filled++] = *start++;
 }
 
 int Span::shortestSpan(void)
@@ -61,4 +67,10 @@ int Span::longestSpan(void)
 		int min = *(std::min_element(_vector.begin(), _vector.begin() + _filled));
 		return max - min;
 	}
+}
+
+void Span::print()
+{
+	for (size_t i = 0; i < _filled; i++)
+		std::cout << i << " : " << _vector[i] << std::endl;
 }
