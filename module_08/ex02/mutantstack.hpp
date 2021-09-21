@@ -1,5 +1,4 @@
-#ifndef MUTANTSTACK_HPP
-#define MUTANTSTACK_HPP
+#pragma once
 
 #include <stack>
 #include <iterator>
@@ -51,5 +50,3 @@ typename MutantStack<T>::iterator MutantStack<T>::end()
 {
 	return this->c.end();
 }
-
-#endif

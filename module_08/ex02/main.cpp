@@ -1,4 +1,4 @@
-// clang++ -Wall -Wextra -Werror -g -std=c++98 -fsanitize=address main.cpp mutantstack.cpp && ./a.out
+// clang++ -Wall -Wextra -Werror -g -std=c++98 -fsanitize=address mutantstack.cpp main.cpp && ./a.out
 
 #include <iostream>
 #include <stack>
@@ -17,6 +17,7 @@ int main()
 		mstack.pop();
 
 		std::cout << "size " << mstack.size() << std::endl;
+
 
 		mstack.push(3);
 		mstack.push(5);
